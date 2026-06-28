@@ -13,7 +13,7 @@ This specific implementation provides an optimized solution for **Problem B: Bin
 All problem statements, test data, and contest organization are the property of **Wincent DragonByte**.
 
 - **Organizer:** [Wincent DragonByte](https://www.wincentdragonbyte.com/)
-- **Contest Archive:** [Wincent DragonByte 2025 Archive](https://wincentdragonbyte.com/archive.html)
+- **Contest Archive:** [Wincent DragonByte Archive](https://www.wincentdragonbyte.com/archive)
 
 ---
 *Disclaimer: This repository is for educational purposes and contains my own work submitted during or after the competition.*
