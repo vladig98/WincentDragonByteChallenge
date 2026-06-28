@@ -1,13 +1,36 @@
 ﻿using System.Numerics;
 
-string path = "";
-string[] inputFiles = ["K1.in", "K2.in", "K3.in", "K4.in", "K5.in"];
-string[] outputFiles = ["K1.out", "K2.out", "K3.out", "K4.out", "K5.out"];
+string[] inputFiles = ["K0_example.in", "K1.in", "K2.in", "K3.in", "K4.in", "K5.in"];
+string[] outputFiles = ["K0_example.out", "K1.out", "K2.out", "K3.out", "K4.out", "K5.out"];
+
+string currentPath = Directory.GetCurrentDirectory();
+DirectoryInfo? directory = new(currentPath);
+
+while (directory is not null && !directory.EnumerateFiles().Any(f =>
+    f.Extension.Equals(".sln", StringComparison.OrdinalIgnoreCase) ||
+    f.Extension.Equals(".slnx", StringComparison.OrdinalIgnoreCase)))
+{
+    directory = directory.Parent;
+}
+
+if (directory is null)
+{
+    throw new FileNotFoundException("Could not find a .sln or .slnx file in the directory hierarchy.");
+}
+
+DirectoryInfo? parentFolder = directory.Parent;
+if (parentFolder is null)
+{
+    throw new DirectoryNotFoundException("Found the solution file, but it is at the root directory. Cannot go one folder up.");
+}
+
+string inputPath = Path.Combine(parentFolder.FullName, "Inputs");
+string outputPath = Path.Combine(parentFolder.FullName, "Outputs");
 
 for (int f = 0; f < inputFiles.Length; f++)
 {
-    string inFilePath = Path.Combine(path, inputFiles[f]);
-    string outFilePath = Path.Combine(path, outputFiles[f]);
+    string inFilePath = Path.Combine(inputPath, inputFiles[f]);
+    string outFilePath = Path.Combine(outputPath, outputFiles[f]);
 
     Console.WriteLine($"Processing: {inputFiles[f]}...");
 

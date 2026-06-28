@@ -1,13 +1,36 @@
 ﻿using System.Numerics;
 
-string path = "D:\\Wincent Dragonbyte\\2026\\WaterSlides";
-string[] inputFiles = ["W0_sample.in", "W1.in", "W2.in", "W3.in", "W4.in"];
-string[] outputFiles = ["W0.out", "W1.out", "W2.out", "W3.out", "W4.out"];
+string[] inputFiles = ["W0_example.in", "W1.in", "W2.in", "W3.in", "W4.in"];
+string[] outputFiles = ["W0_example.out", "W1.out", "W2.out", "W3.out", "W4.out"];
+
+string currentPath = Directory.GetCurrentDirectory();
+DirectoryInfo? directory = new(currentPath);
+
+while (directory is not null && !directory.EnumerateFiles().Any(f =>
+    f.Extension.Equals(".sln", StringComparison.OrdinalIgnoreCase) ||
+    f.Extension.Equals(".slnx", StringComparison.OrdinalIgnoreCase)))
+{
+    directory = directory.Parent;
+}
+
+if (directory is null)
+{
+    throw new FileNotFoundException("Could not find a .sln or .slnx file in the directory hierarchy.");
+}
+
+DirectoryInfo? parentFolder = directory.Parent;
+if (parentFolder is null)
+{
+    throw new DirectoryNotFoundException("Found the solution file, but it is at the root directory. Cannot go one folder up.");
+}
+
+string inputPath = Path.Combine(parentFolder.FullName, "Inputs");
+string outputPath = Path.Combine(parentFolder.FullName, "Outputs");
 
 for (int f = 0; f < inputFiles.Length; f++)
 {
-    string inFilePath = Path.Combine(path, inputFiles[f]);
-    string outFilePath = Path.Combine(path, outputFiles[f]);
+    string inFilePath = Path.Combine(inputPath, inputFiles[f]);
+    string outFilePath = Path.Combine(outputPath, outputFiles[f]);
 
     Console.WriteLine($"Processing: {inputFiles[f]}...");
 
