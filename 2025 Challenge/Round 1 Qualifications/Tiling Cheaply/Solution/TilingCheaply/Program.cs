@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 
 string[] inputFiles = ["T0_example.in", "T1.in", "T2.in", "T3.in"];
 string[] outputFiles = ["T0_example.out", "T1.out", "T2.out", "T3.out"];
@@ -18,14 +18,15 @@ if (directory is null)
     throw new FileNotFoundException("Could not find a .sln or .slnx file in the directory hierarchy.");
 }
 
-DirectoryInfo? parentFolder = directory.Parent;
-if (parentFolder is null)
-{
-    throw new DirectoryNotFoundException("Found the solution file, but it is at the root directory. Cannot go one folder up.");
-}
+DirectoryInfo? parentFolder = directory.Parent 
+    ?? throw new DirectoryNotFoundException("Found the solution file, but it is at the root directory. Cannot go one folder up.");
 
 string inputPath = Path.Combine(parentFolder.FullName, "Inputs");
 string outputPath = Path.Combine(parentFolder.FullName, "Outputs");
+
+char[,]? solutionFor7x7 = null;
+char solutionLastLetter = '\0';
+const bool useHardCodedSolution = false;
 
 for (int f = 0; f < inputFiles.Length; f++)
 {
@@ -50,6 +51,25 @@ for (int f = 0; f < inputFiles.Length; f++)
 
         const string no = "NO";
         const string yes = "YES";
+        IReadOnlyList<(string, bool, (int, int)[])> shapes =
+        [
+            // O Tetromino
+            ("O", false, [(0, 0), (0, 1), (1, 0), (1, 1)]),
+        
+            // S Tetrominoes
+            ("S", false, [(0, 0), (0, 1), (1, -1), (1, 0)]),
+            ("S_Rot", false, [(0, 0), (1, 0), (1, 1), (2, 1)]),
+        
+            // Z Tetrominoes
+            ("Z", false, [(0, 0), (0, 1), (1, 1), (1, 2)]),
+            ("Z_Rot", false, [(0, 0), (1, -1), (1, 0), (2, -1)]),
+        
+            // L Trominoes (3 blocks)
+            ("L", true, [(0, 0), (1, 0), (1, 1)]),
+            ("L_Rot90", true, [(0, 0), (0, 1), (1, 0)]),
+            ("L_Rot180", true, [(0, 0), (0, 1), (1, 1)]),
+            ("L_Rot270", true, [(0, 0), (1, -1), (1, 0)])
+        ];
 
         int testcases = int.Parse(headerLine);
         for (int t = 0; t < testcases; t++)
@@ -76,7 +96,7 @@ for (int f = 0; f < inputFiles.Length; f++)
             }
             else
             {
-                PrintOdd(writer, dimensions, matrix);
+                PrintOdd(writer, dimensions, matrix, shapes);
             }
         }
     }
@@ -84,12 +104,41 @@ for (int f = 0; f < inputFiles.Length; f++)
     Console.WriteLine($"Finished: {outputFiles[f]}\n");
 }
 
-static void PrintOdd(StreamWriter writer, int dimensions, char[,] matrix)
+void PrintOdd(StreamWriter writer, int dimensions, char[,] matrix, IReadOnlyList<(string, bool, (int, int)[])> shapes)
 {
     const int baseSolutionSize = 7;
     char letter = 'a';
 
-    letter = PopulateBaseSolution(matrix, letter);
+    if (useHardCodedSolution)
+    {
+        letter = PopulateBaseSolution(matrix, letter);
+    }
+    else
+    {
+        if (solutionFor7x7 is null)
+        {
+            char[,] baseMatrix = new char[baseSolutionSize, baseSolutionSize];
+            (bool found, letter) = GenerateSolution(letter, baseSolutionSize, baseMatrix, shapes);
+
+            if (!found)
+            {
+                throw new InvalidOperationException("Couldn't solve the base 7x7 grid.");
+            }
+
+            solutionLastLetter = letter;
+            solutionFor7x7 = baseMatrix;
+        }
+
+        for (int r = 0; r < baseSolutionSize; r++)
+        {
+            for (int c = 0; c < baseSolutionSize; c++)
+            {
+                matrix[r, c] = solutionFor7x7[r, c];
+            }
+        }
+
+        letter = solutionLastLetter;
+    }
 
     for (int currentSize = baseSolutionSize; currentSize < dimensions; currentSize += 2)
     {
@@ -100,6 +149,108 @@ static void PrintOdd(StreamWriter writer, int dimensions, char[,] matrix)
 
     string result = GetResult(matrix);
     writer.Write(result);
+}
+
+static (bool, char) GenerateSolution(char letter, int dimensions, char[,] matrix, IReadOnlyList<(string, bool, (int, int)[])> shapes)
+{
+    int totalCells = matrix.GetLength(0) * matrix.GetLength(1);
+    int maxPossibleLs = totalCells / 3;
+
+    for (int allowedLs = 0; allowedLs <= maxPossibleLs; allowedLs++)
+    {
+        (bool isSuccess, char lastLetter) = SolveDFS(matrix, 0, 0, allowedLs, 0, letter, shapes);
+        if (isSuccess)
+        {
+            return (isSuccess, lastLetter);
+        }
+    }
+
+    return (false, letter);
+}
+
+static (bool, char) SolveDFS(char[,] matrix, int row, int col, int maxAllowedLs, int currentLs, char lastLetter, IReadOnlyList<(string, bool, (int, int)[])> shapes)
+{
+    int rows = matrix.GetLength(0);
+    int cols = matrix.GetLength(1);
+
+    while (row < rows && IsOccupied(matrix, row, col))
+    {
+        col++;
+        if (col >= cols)
+        {
+            col = 0;
+            row++;
+        }
+    }
+
+    if (row >= rows)
+    {
+        return (true, lastLetter);
+    }
+
+    foreach ((string name, bool isL, (int dr, int dc)[] blocks) in shapes)
+    {
+        if (isL && currentLs >= maxAllowedLs)
+        {
+            continue;
+        }
+
+        if (CanPlaceShape(matrix, row, col, blocks))
+        {
+            (int, int)[] points = new (int, int)[blocks.Length];
+            for (int i = 0; i < blocks.Length; i++)
+            {
+                points[i] = (row + blocks[i].dr, col + blocks[i].dc);
+            }
+
+            char letterToUse = NextLetter(lastLetter, matrix, points);
+            foreach ((int r, int c) in points)
+            {
+                matrix[r, c] = letterToUse;
+            }
+
+            int newLCount = isL ? currentLs + 1 : currentLs;
+            (bool isSuccess, char letter) = SolveDFS(matrix, row, col, maxAllowedLs, newLCount, letterToUse, shapes);
+
+            if (isSuccess)
+            {
+                return (isSuccess, letter);
+            }
+
+            foreach ((int r, int c) in points)
+            {
+                matrix[r, c] = '\0';
+            }
+        }
+    }
+
+    return (false, lastLetter);
+}
+
+static bool CanPlaceShape(char[,] matrix, int row, int col, (int dr, int dc)[] blocks)
+{
+    foreach ((int dr, int dc) in blocks)
+    {
+        int r = row + dr;
+        int c = col + dc;
+
+        if (r < 0 || r >= matrix.GetLength(0) || c < 0 || c >= matrix.GetLength(1))
+        {
+            return false;
+        }
+
+        if (IsOccupied(matrix, r, c))
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+static bool IsOccupied(char[,] matrix, int row, int col)
+{
+    return matrix[row, col] >= 'a' && matrix[row, col] <= 'z';
 }
 
 static void PrintEven(StreamWriter writer, int dimensions, char[,] matrix)
