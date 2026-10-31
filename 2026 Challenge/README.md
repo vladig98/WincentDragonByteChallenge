@@ -1,4 +1,4 @@
-# Wincent DragonByte 2025
+# Wincent DragonByte 2026
 
 Solutions and resources for the 2026 Round.
 
