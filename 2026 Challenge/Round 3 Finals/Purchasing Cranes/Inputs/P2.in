@@ -1,0 +1,201 @@
+100
+3 0 1
+C-
+3 0 2
+--
+3 2 3
+--
+4 1 2
+--C
+4 1 3
+C--
+5 1 3
+--C-
+5 2 2
+---C
+7 2 3
+--C--C
+7 3 2
+--C--C
+8 2 2
+C-C--CC
+8 2 3
+C-C--CC
+10 1 3
+CCC---C-C
+11 1 3
+CCCC--C-CC
+12 2 2
+CC-C---C-CC
+12 2 3
+C-CC---C-CC
+10 0 1
+---------
+13 1 2
+------------
+24 11 3
+-----------------------
+88 87 1
+---------------------------------------------------------------------------------------
+42 0 2
+-----------------------------------------
+80 1 3
+-------------------------------------------------------------------------------
+80 39 1
+-------------------------------------------------------------------------------
+77 76 2
+----------------------------------------------------------------------------
+23 0 3
+----------------------
+84 1 1
+-----------------------------------------------------------------------------------
+95 47 2
+----------------------------------------------------------------------------------------------
+68 67 3
+-------------------------------------------------------------------
+50 0 1
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+59 0 2
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+37 0 3
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+7 0 1
+CCCCCC
+6 0 2
+CCCCC
+62 0 3
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+48 2 1
+CC-CCCCCCCCCCCCCCCCCCC-CC-CCCCCCC-CC-CCCC-CCCCC
+56 1 2
+C-C-CCCCCCCCCCCCCC-CCCCCCCCCCCCCCCCCCC-C-CCCCCCCCCCCCCC
+75 14 3
+CCCCCCCCCCC-CCCCCCCC--CCC--CCCC-CCCCC-CC-C--CCCCCCCCCCCCCCC-CCCCC---CCCCCC
+79 7 1
+-CCCCCCCCCCCCCCCCC-CCCCCCCCCCCCCCCC-C-CCC-CCCCCCCCCCCCC-CCCCC-CCCCCCCCCCCCCC-C
+38 1 2
+-CCC-CCCCCCCCCCCCCCC-CCCCCCC-CCCCCC-C
+11 2 3
+C-C-CCCCC-
+49 3 1
+CCCCCCCC-CCC-CCCCCC-CCCCCCC-CCC--CCCCCCCCC-CCCCC
+25 1 2
+CCCCCCC-CCCCCC-CCCCCCCCC
+73 20 1
+C---------------C-C-------------------------C---C----C----C-----C-----C-
+73 12 2
+-------C----C-------C--C---C-C-----------C-C-C--C----C--C-C----C---C---C
+79 58 3
+C---C--C-C--------------------C--C------C-C--C-C-C-----C---------C-C--C----C--
+65 15 1
+C-----C----------C----C-C---------------------------------C--C-C
+61 27 2
+---C---C-C-------C--C-------C--C-C---------------C-----C----
+75 27 3
+-----C-------C-------C-----C-------C-----C-------C----------C---C--C------
+54 14 1
+----------C-C-------------C--------C--C--------C-----
+83 12 2
+---C--------------------------------C--------C---C---C--------------C--C-C-C-C----
+52 5 1
+-C-CC-CCC-CCCC-CCCCC-CCCCCC-CCCCCCC-CCCCCCCC-CCCCCC
+63 2 2
+-C-CC-CCC-CCCC-CCCCC-CCCCCC-CCCCCCC-CCCCCCCC-CCCCCCCCC-CCCCCCC
+57 5 3
+-C-CC-CCC-CCCC-CCCCC-CCCCCC-CCCCCCC-CCCCCCCC-CCCCCCCCC-C
+100 7 1
+-C-CC-CCC-CCCC-CCCCC-CCCCCC-CCCCCCC-CCCCCCCC-CCCCCCCCC-CCCCCCCCCC-CCCCCCCCCCC-CCCCCCCCCCCC-CCCCCCCC
+89 8 2
+-C-CC-CCC-CCCC-CCCCC-CCCCCC-CCCCCCC-CCCCCCCC-CCCCCCCCC-CCCCCCCCCC-CCCCCCCCCCC-CCCCCCCCCC
+37 3 3
+-C-CC-CCC-CCCC-CCCCC-CCCCCC-CCCCCCC-
+43 12 1
+C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-
+71 20 2
+C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-
+73 20 3
+C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-CC
+53 14 1
+C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-CCC
+66 18 2
+C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-CC
+67 18 3
+C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-C---CC-CCC
+80 2 1
+CCCCCCC-CCCCCCC-------------------------------------------------CCCCCCC-CCCCCCC
+79 2 2
+CCCCCC-CCCCCC----------------------------------------------------CCCCCC-CCCCCC
+66 2 3
+CCCCC-CCCCC-------------------------------------------CCCCC-CCCCC
+92 2 1
+CCCCCCCC-CCCCCCCC---------------------------------------------------------CCCCCCCC-CCCCCCCC
+49 2 2
+CCC-CCC----------------------------------CCC-CCC
+97 2 3
+CCCCCCCC-CCCCCCCC--------------------------------------------------------------CCCCCCCC-CCCCCCCC
+51 1 3
+-CCCCC-CCCCC---CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC-
+64 1 3
+CCCCCC-CCCCCC---CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+91 1 3
+-----CCCCCCC-CCCCCCC---CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC-----
+68 1 3
+--CCCCCC-CCCCCC---CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC--
+94 1 3
+------CCCCCCC-CCCCCCC---CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC-------
+96 1 3
+-------CCCCCCC-CCCCCCC---CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC--------
+82 1 3
+---------------------------------CC-CC---CCCCCCC---------------------------------
+56 1 3
+--------------------CC-CC---CCCCCCC--------------------
+95 1 3
+---------------------------------------CC-CC---CCCCCCC----------------------------------------
+39 1 3
+-----------CC-CC---CCCCCCC------------
+73 1 3
+----------------------------CC-CC---CCCCCCC-----------------------------
+31 1 3
+-------CC-CC---CCCCCCC--------
+27 0 2
+--------------------------
+16 3 3
+---------------
+76 38 1
+--C---C--C-C---C-CCC-----------C-C-C----C-----C---C-------CCC---------C-CC-
+9 0 2
+CCCC-CCC
+78 37 3
+C-C--C-C-CCCC-C-C-C--CCC-C--CCCC---CC---C--C-C-C-C-CCC----CCC--C-C--CC----C--
+90 70 1
+-------------------C------C-------C------C----C-------------------C-------CC-------------
+16 1 2
+C-C--CCCCCCCCCC
+69 0 3
+--C-CC-CCCCCC-CCCCCCC--CCCC-CCCCC----CCCCC--C-C-CCC-CC-C-C-CCC-CCC--
+37 0 1
+CCCCCCCCCCC-CCCCCCCCCCCCCCCCCCCCCCCC
+29 2 2
+CCC--CCCCCCCC---C-C-CC--C-CC
+10 0 3
+-CCCCCCCC
+94 59 1
+--C-C-C--------C--CC------C-------C---C--CC-CC--C-C---CC--C-C--C-CC-C--C--C-------C---CCCCC--
+7 0 2
+--C--C
+49 4 3
+C-----C--C-CC--C-----CC-C-CC-------C-----C-C-C-C
+25 15 1
+CC-C----CC---C---C---CC-
+89 43 2
+CC----C--C--------C----C-------CC-CC-------C--C--C-CC-C--C--C-C-C--C-C-C--CC-------C---C
+13 4 3
+C--CCCCC--CC
+11 4 1
+-----CC-CC
+8 0 2
+CCCCCCC
+5 1 3
+-C--
+35 3 1
+-CCCC-C-CC--C-C--C-C-C-C-C-CC-C-C-

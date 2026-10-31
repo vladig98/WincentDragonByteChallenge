@@ -6,7 +6,7 @@ This repository contains my personal solutions for the **Wincent DragonByte 2026
 This specific implementation provides an optimized solution for **Problem M: Martian Sieve**, which focuses on algorithmic efficiency and numerical analysis.
 
 ### Problem Details
-- **Contest:** Wincent DragonByte 2026 (Qualification Round)
+- **Contest:** Wincent DragonByte 2026 (Online Round)
 - **Problem Statement:** [Martian Sieve - Official Statement](https://www.wincentdragonbyte.com/archive/online2026/M/statement)
 
 ## 🏆 Credits & Acknowledgments

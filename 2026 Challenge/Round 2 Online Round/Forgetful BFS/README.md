@@ -6,7 +6,7 @@ This repository contains my personal solutions for the **Wincent DragonByte 2026
 This specific implementation provides an optimized solution for **Problem F: Forgetful BFS**, which focuses on algorithmic efficiency and numerical analysis.
 
 ### Problem Details
-- **Contest:** Wincent DragonByte 2026 (Qualification Round)
+- **Contest:** Wincent DragonByte 2026 (Online Round)
 - **Problem Statement:** [Forgetful BFS - Official Statement](https://www.wincentdragonbyte.com/archive/online2026/F/statement)
 
 ## 🏆 Credits & Acknowledgments

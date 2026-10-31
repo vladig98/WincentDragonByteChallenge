@@ -1,0 +1,201 @@
+100
+3 0 1
+CC
+3 0 2
+CC
+3 0 3
+CC
+4 1 2
+---
+4 1 3
+---
+5 1 2
+--C-
+5 2 3
+---C
+7 2 2
+-CC--C
+7 2 3
+-C--C-
+8 2 2
+-C---CC
+8 3 3
+C----CC
+10 1 3
+-CCC--C-C
+11 1 3
+CCCC--CC-C
+12 2 2
+CC-C--C-CC-
+12 2 3
+-C-CC--C-CC
+7 0 1
+------
+5 1 2
+----
+6 2 3
+-----
+17 16 1
+----------------
+15 0 2
+--------------
+9 1 3
+--------
+18 8 1
+-----------------
+15 14 2
+--------------
+3 0 3
+--
+17 1 1
+----------------
+10 4 2
+---------
+6 5 3
+-----
+13 0 1
+CCCCCCCCCCCC
+3 0 2
+CC
+20 0 3
+CCCCCCCCCCCCCCCCCCC
+15 0 1
+CCCCCCCCCCCCCC
+9 0 2
+CCCCCCCC
+3 0 3
+CC
+11 0 1
+CCCCCCCCCC
+15 0 2
+CCCCCCCC-CCCCC
+15 2 3
+CCCCCCC--CCCCC
+11 0 1
+CCCCCCCC-C
+11 0 2
+CCCCCCCCCC
+11 5 3
+-C-CCC--C-
+15 0 1
+CCCCCCCCCCCCC-
+12 0 2
+C-CC-CCCCC-
+8 6 1
+-----C-
+16 4 2
+--C----C------C
+18 3 3
+C----C--C--C---C-
+10 4 1
+------C--
+19 4 2
+--C-C------C--C---
+12 6 3
+----C------
+19 16 1
+------------C-----
+19 14 2
+------C---C------C
+14 0 1
+-C-CC-CCC-CCC
+12 1 2
+-C-CC-CCC-C
+19 1 3
+-C-CC-CCC-CCCC-CCC
+16 3 1
+-C-CC-CCC-CCCC-
+10 3 2
+-C-CC-CCC
+15 0 3
+-C-CC-CCC-CCCC
+15 4 1
+C---CC-C---CC-
+16 4 2
+C---CC-C---CC-C
+17 4 3
+C---CC-C---CC-CC
+8 2 1
+C---CC-
+11 2 2
+C---CC-CCC
+20 4 3
+C---CC-C---CC-CCCCC
+14 2 1
+C-C-------C-C
+10 2 2
+C-C---C-C
+16 2 3
+C-C---------C-C
+19 2 1
+C-C------------C-C
+18 2 2
+C-C-----------C-C
+13 2 3
+C-C------C-C
+17 11 2
+CCC----CC-------
+19 0 3
+CCCCCC-CCCCCCCCCCC
+8 4 1
+-------
+15 0 2
+-CCCCCCCC----C
+18 2 3
+CC-C-C-CCCCCCCCC-
+3 0 1
+CC
+4 0 2
+---
+15 11 3
+------C----C--
+8 0 1
+C--CCC-
+19 0 2
+---------C---C----
+3 0 3
+CC
+9 5 1
+---CC---
+20 15 2
+------C------------
+15 3 3
+---CCCC-CCC-CC
+14 2 1
+--CCCCCCC---C
+14 0 2
+CC-CC-CCCCCCC
+11 0 3
+-----C----
+20 8 1
+---C-C-C------C----
+3 1 2
+--
+19 5 3
+---C--C-CC--CCCC-C
+7 2 1
+--C-CC
+20 2 2
+CCCC-CCCCCCCCCCCCC-
+16 0 3
+CCCCCCCCCCCCCCC
+4 0 1
+-CC
+14 3 2
+CCCCC-CCCC--C
+20 1 3
+CCC-CCCCCCCCC-C--C-
+19 6 1
+-C--C-----CC-C-CCC
+18 1 2
+CCCCCCCCC-CCCCCCC
+14 7 3
+-C-----C-C---
+14 0 1
+CCCCCC-CCC-CC
+20 1 2
+CCCCCCCCC-CCCC-CC-C
+13 0 3
+CCCCCCCCCCCC
+3 0 1
+CC
